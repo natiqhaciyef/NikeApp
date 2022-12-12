@@ -12,4 +12,10 @@
     <color name="top_title_background">#000000</color>
     <color name="app_background">#FFFFFF</color>
     <color name="splash_screen_background">#1483C2</color>
+
+    <color name="nav_item_selected">#000000</color>
+    <color name="nav_item_not_selected">#707070</color>
+    <color name="nav_background_stroke">#838383</color>
+
+
 </resources>

@@ -6,4 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".presentation.activity.MainActivity">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:layout_margin="30dp"
+        app:menu="@menu/navigation_menu"
+        android:background="@drawable/nav_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:itemIconTint="@drawable/nav_item_selected"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="unlabeled"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
