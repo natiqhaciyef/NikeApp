@@ -11,5 +11,5 @@
     <!-- Application own colors -->
     <color name="top_title_background">#000000</color>
     <color name="app_background">#FFFFFF</color>
-
+    <color name="splash_screen_background">#1483C2</color>
 </resources>
