@@ -31,6 +31,7 @@
         app:layout_constraintTop_toBottomOf="@+id/splashScreenMainText1" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/getStartButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
