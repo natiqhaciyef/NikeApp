@@ -1,5 +1,6 @@
 package com.natiqhaciyef.nikeapp.presentation.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.natiqhaciyef.nikeapp.databinding.ActivityMainBinding
@@ -11,5 +12,11 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.getStartButton.setOnClickListener {
+            val intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }
