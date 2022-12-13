@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "426074144997",
+    "project_id": "nike-app-eaf2d",
+    "storage_bucket": "nike-app-eaf2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426074144997:android:bb48155485ee3fb177540c",
+        "android_client_info": {
+          "package_name": "com.natiqhaciyef.nikeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426074144997-g95ha697nbtsoqc1uacbicqc86eqlagq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.natiqhaciyef.nikeapp",
+            "certificate_hash": "d98fca6a970788dc3038677740f1da05d9721b07"
+          }
+        },
+        {
+          "client_id": "426074144997-mn90iq9f5s7dilkd82ivjn0tbgda58ue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4PYR6_s9W8XknTInLYzI3bWwICZ4eYcc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426074144997-mn90iq9f5s7dilkd82ivjn0tbgda58ue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
