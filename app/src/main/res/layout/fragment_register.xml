@@ -33,20 +33,20 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/userNameTextRegister"
         android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/custom_input_register_background"
         android:elevation="7dp"
         android:hint="@string/username_text"
         android:inputType="text"
-        android:textColor="@color/black"
         android:paddingStart="15dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/custom_input_register_background"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sloganRegister"
-        />
+        tools:ignore="DuplicateClickableBoundsCheck,DuplicateClickableBoundsCheck" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/emailTextRegister"
@@ -138,5 +138,32 @@
         app:layout_constraintStart_toEndOf="@+id/toLoginScreenText"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.642" />
+
+    <ImageView
+        android:id="@+id/passwordOpenEyeRegister"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:elevation="10dp"
+        android:src="@drawable/open_eye"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/passwordTextRegister"
+        app:layout_constraintEnd_toEndOf="@+id/passwordTextRegister"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="@+id/passwordTextRegister"
+        app:layout_constraintTop_toTopOf="@+id/passwordTextRegister"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/passwordHideEyeRegister"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:elevation="10dp"
+        android:src="@drawable/hide_eye"
+        app:layout_constraintBottom_toBottomOf="@+id/passwordTextRegister"
+        app:layout_constraintEnd_toEndOf="@+id/passwordTextRegister"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="@+id/passwordTextRegister"
+        app:layout_constraintTop_toTopOf="@+id/passwordTextRegister"
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
