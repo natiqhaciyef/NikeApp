@@ -19,5 +19,7 @@
 
     <color name="recycler_post_background">#f6f6f6</color>
 
+    <color name="red">#FF0000</color>
+    <color name="gray">#707070</color>
 
 </resources>
