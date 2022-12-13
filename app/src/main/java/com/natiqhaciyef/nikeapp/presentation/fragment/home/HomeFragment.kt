@@ -1,4 +1,4 @@
-package com.natiqhaciyef.nikeapp.presentation.fragment
+package com.natiqhaciyef.nikeapp.presentation.fragment.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

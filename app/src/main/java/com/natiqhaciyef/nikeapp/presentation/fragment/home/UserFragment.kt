@@ -1,4 +1,4 @@
-package com.natiqhaciyef.nikeapp.presentation.fragment
+package com.natiqhaciyef.nikeapp.presentation.fragment.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,16 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.natiqhaciyef.nikeapp.R
-import com.natiqhaciyef.nikeapp.databinding.FragmentNotificationBinding
+import com.natiqhaciyef.nikeapp.databinding.FragmentUserBinding
 
 
-class NotificationFragment : Fragment() {
-    private lateinit var binding: FragmentNotificationBinding
+class UserFragment : Fragment() {
+    private lateinit var binding: FragmentUserBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_notification, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user, container, false)
         return binding.root
     }
 
