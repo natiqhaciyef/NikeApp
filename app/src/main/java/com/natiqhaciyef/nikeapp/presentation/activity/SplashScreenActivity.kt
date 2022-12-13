@@ -14,7 +14,7 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.getStartButton.setOnClickListener {
-            val intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
+            val intent = Intent(this@SplashScreenActivity, RegisterActivity::class.java)
             startActivity(intent)
             finish()
         }
