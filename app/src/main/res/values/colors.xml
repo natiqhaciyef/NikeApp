@@ -17,7 +17,7 @@
     <color name="nav_item_not_selected">#707070</color>
     <color name="nav_background_stroke">#838383</color>
 
-    <color name="recycler_post_background">#EFEFEF</color>
+    <color name="recycler_post_background">#f6f6f6</color>
 
 
 </resources>
