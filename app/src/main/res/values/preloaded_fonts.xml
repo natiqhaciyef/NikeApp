@@ -3,5 +3,8 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/abeezee</item>
         <item>@font/dm_sans_bold</item>
+        <item>@font/work_sans_bold</item>
+        <item>@font/work_sans_medium</item>
+        <item>@font/work_sans_semibold</item>
     </array>
 </resources>
