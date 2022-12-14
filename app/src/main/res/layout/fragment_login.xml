@@ -138,4 +138,31 @@
         app:layout_constraintStart_toEndOf="@+id/toRegisterScreenText"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.735" />
+
+    <ImageView
+        android:id="@+id/passwordOpenEyeLogin"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:elevation="10dp"
+        android:src="@drawable/open_eye"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/passwordTextLogin"
+        app:layout_constraintEnd_toEndOf="@+id/passwordTextLogin"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="@+id/passwordTextLogin"
+        app:layout_constraintTop_toTopOf="@+id/passwordTextLogin"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/passwordHideEyeLogin"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:elevation="10dp"
+        android:src="@drawable/hide_eye"
+        app:layout_constraintBottom_toBottomOf="@+id/passwordTextLogin"
+        app:layout_constraintEnd_toEndOf="@+id/passwordTextLogin"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="@+id/passwordTextLogin"
+        app:layout_constraintTop_toTopOf="@+id/passwordTextLogin"
+        app:layout_constraintVertical_bias="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
