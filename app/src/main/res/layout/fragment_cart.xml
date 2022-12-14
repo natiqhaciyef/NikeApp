@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="cartFragment"
+            type="com.natiqhaciyef.nikeapp.presentation.fragment.home.CartFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.fragment.home.NotificationFragment">
+        tools:context=".presentation.fragment.home.CartFragment">
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
