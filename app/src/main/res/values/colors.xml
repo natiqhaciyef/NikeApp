@@ -21,5 +21,6 @@
 
     <color name="red">#FF0000</color>
     <color name="gray">#707070</color>
+    <color name="social_media_background_gray">#7e7e7e</color>
 
 </resources>
