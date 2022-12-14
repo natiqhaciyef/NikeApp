@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -8,11 +9,80 @@
             type="com.natiqhaciyef.nikeapp.presentation.fragment.home.HomeFragment" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".presentation.fragment.home.HomeFragment">
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            tools:context=".presentation.fragment.home.HomeFragment">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/goToCartBackground"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.92"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/goToCartIconFragment"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:elevation="10dp"
+                android:src="@drawable/store_icon"
+                app:layout_constraintBottom_toBottomOf="@id/goToCartBackground"
+                app:layout_constraintEnd_toEndOf="@id/goToCartBackground"
+                app:layout_constraintStart_toStartOf="@id/goToCartBackground"
+                app:layout_constraintTop_toTopOf="@id/goToCartBackground" />
+
+            <ImageView
+                android:id="@+id/nikeLogoHomeFragment"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/nike_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.08"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/advertiseViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nikeLogoHomeFragment" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoriesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/advertiseViewPager" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/categoriesRecyclerView" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

@@ -16,7 +16,7 @@
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="190dp"
+            android:layout_width="185dp"
             android:layout_height="250dp"
             android:background="@color/recycler_post_background"
             >
