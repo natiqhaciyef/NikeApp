@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="userFragment"
+            type="com.natiqhaciyef.nikeapp.presentation.fragment.home.UserFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,6 +14,119 @@
         android:layout_height="match_parent"
         tools:context=".presentation.fragment.home.UserFragment">
 
+        <ImageView
+            android:id="@+id/nikeLogoUserFragment"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/nike_logo_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.055"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/userProfileIconFragment"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/user_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nikeLogoUserFragment" />
+
+        <LinearLayout
+            android:id="@+id/infoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:elevation="5dp"
+            android:orientation="vertical"
+            android:background="@drawable/custom_input_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userProfileIconFragment"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Username: Natiq Haciyev"
+                android:textStyle="bold"
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Join data: 14.12.2022"
+                android:textStyle="bold"
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@drawable/custom_register_button"
+            android:text="Sign out"
+            android:textAllCaps="false"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/socialMediaLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/socialMediaLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:padding="30dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/twitterLinkIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="20dp"
+                app:srcCompat="@drawable/twitter_nike" />
+
+            <ImageView
+                android:id="@+id/facebookLinkIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="20dp"
+                app:srcCompat="@drawable/facebook_nike" />
+
+            <ImageView
+                android:id="@+id/youtubeLinkIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="20dp"
+                app:srcCompat="@drawable/youtube_nike" />
+
+            <ImageView
+                android:id="@+id/instagramLinkIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                app:srcCompat="@drawable/instagram_nike" />
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
