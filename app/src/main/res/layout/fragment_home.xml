@@ -7,6 +7,12 @@
         <variable
             name="homeFragment"
             type="com.natiqhaciyef.nikeapp.presentation.fragment.home.HomeFragment" />
+        <variable
+            name="postAdapter"
+            type="com.natiqhaciyef.nikeapp.presentation.adapter.PostAdapter" />
+        <variable
+            name="categoryAdapter"
+            type="com.natiqhaciyef.nikeapp.presentation.adapter.CategoryAdapter" />
     </data>
 
     <ScrollView
@@ -15,7 +21,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             tools:context=".presentation.fragment.home.HomeFragment">
 
             <androidx.cardview.widget.CardView
@@ -67,16 +73,20 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/categoriesRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:adapter="@{categoryAdapter}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/advertiseViewPager" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/postRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="5dp"
+                android:adapter="@{postAdapter}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
