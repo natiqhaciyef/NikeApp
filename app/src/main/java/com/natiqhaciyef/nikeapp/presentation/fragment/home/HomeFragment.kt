@@ -52,5 +52,7 @@ class HomeFragment : Fragment() {
 
         binding.categoriesRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.categoryAdapter = categoryAdapter
+
+
     }
 }
