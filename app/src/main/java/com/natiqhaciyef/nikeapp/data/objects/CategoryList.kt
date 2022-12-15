@@ -8,6 +8,6 @@ object CategoryList {
         CategoryModel(2,"Running"),
         CategoryModel(3,"Sneakers"),
         CategoryModel(4,"Formal"),
-        CategoryModel(4,"Casual")
+        CategoryModel(5,"Casual")
     )
 }
