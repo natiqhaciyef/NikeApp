@@ -7,6 +7,9 @@
         <variable
             name="homeFragment"
             type="com.natiqhaciyef.nikeapp.presentation.fragment.home.HomeFragment" />
+        <variable
+            name="postAdapter"
+            type="com.natiqhaciyef.nikeapp.presentation.fragment.adapter.PostAdapter" />
     </data>
 
     <ScrollView
@@ -15,7 +18,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             tools:context=".presentation.fragment.home.HomeFragment">
 
             <androidx.cardview.widget.CardView
@@ -74,9 +77,12 @@
                 app:layout_constraintTop_toBottomOf="@id/advertiseViewPager" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/postRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:layout_marginTop="15dp"
+                android:adapter="@{postAdapter}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
