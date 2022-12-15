@@ -1,4 +1,4 @@
-package com.natiqhaciyef.nikeapp.presentation.fragment.adapter
+package com.natiqhaciyef.nikeapp.presentation.adapter
 
 
 import android.content.Context

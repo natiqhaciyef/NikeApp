@@ -3,18 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="categoryModel"
+            type="com.natiqhaciyef.nikeapp.data.model.CategoryModel" />
     </data>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="120dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         app:cardCornerRadius="18dp"
-        app:cardElevation="10dp"
+        app:cardElevation="3dp"
         android:layout_marginTop="5dp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="3dp"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,8 +29,12 @@
                 android:layout_height="match_parent"
                 android:textSize="19sp"
                 android:textStyle="bold"
-                android:text="Sneakers"
+                android:text="@{categoryModel.name}"
                 android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
