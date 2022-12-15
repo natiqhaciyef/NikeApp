@@ -23,6 +23,7 @@ class AdvertisementAdapter(val mContext: Context, var list: MutableList<Advertis
     override fun onBindViewHolder(holder: AdvertisementHolder, position: Int) {
         val itemView = holder.binding
         val ad = list[position]
+        val id = list[position].id
 
         itemView.adModel = ad
         itemView.adImageView.setImageResource(mContext.resources
