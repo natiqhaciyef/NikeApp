@@ -18,6 +18,7 @@
     <color name="nav_background_stroke">#838383</color>
 
     <color name="recycler_post_background">#f6f6f6</color>
+    <color name="gray_background">#EFEFEF</color>
 
     <color name="red">#FF0000</color>
     <color name="gray">#707070</color>
