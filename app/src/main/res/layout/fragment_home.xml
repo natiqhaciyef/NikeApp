@@ -62,10 +62,9 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/advertiseViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginTop="10dp"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
+                android:layout_height="210dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nikeLogoHomeFragment" />
@@ -74,7 +73,7 @@
                 android:id="@+id/categoriesRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:adapter="@{categoryAdapter}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
