@@ -1,4 +1,6 @@
-package com.natiqhaciyef.nikeapp.data.model
+package com.natiqhaciyef.nikeapp.data.objects
+
+import com.natiqhaciyef.nikeapp.data.model.CategoryModel
 
 object CategoryList {
     val list = mutableListOf(
