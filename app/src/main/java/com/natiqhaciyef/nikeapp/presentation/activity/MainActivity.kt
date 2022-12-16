@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
                     navigationFragments(R.id.savedFragment)
                     true
                 }
-                R.id.notificationFragment -> {
-                    navigationFragments(R.id.notificationFragment)
+                R.id.cartFragment -> {
+                    navigationFragments(R.id.cartFragment)
                     true
                 }
                 else -> {
