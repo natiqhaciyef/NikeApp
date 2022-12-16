@@ -15,17 +15,21 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.natiqhaciyef.nikeapp.presentation.fragment.home.DetailsFragment"
-        android:label="DetailsFragment" />
+        android:label="DetailsFragment" >
+        <argument
+            android:name="post"
+            app:argType="com.natiqhaciyef.nikeapp.data.model.PostModel" />
+    </fragment>
     <fragment
         android:id="@+id/savedFragment"
         android:name="com.natiqhaciyef.nikeapp.presentation.fragment.home.SavedFragment"
         android:label="SavedFragment" />
     <fragment
-        android:id="@+id/notificationFragment"
-        android:name="com.natiqhaciyef.nikeapp.presentation.fragment.home.NotificationFragment"
-        android:label="NotificationFragment" />
-    <fragment
         android:id="@+id/userFragment"
         android:name="com.natiqhaciyef.nikeapp.presentation.fragment.home.UserFragment"
         android:label="UserFragment" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.natiqhaciyef.nikeapp.presentation.fragment.home.CartFragment"
+        android:label="CartFragment" />
 </navigation>
