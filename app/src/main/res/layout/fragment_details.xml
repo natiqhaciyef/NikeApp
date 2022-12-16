@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="detailsFragment"
             type="com.natiqhaciyef.nikeapp.presentation.fragment.home.DetailsFragment" />
@@ -13,6 +15,263 @@
         android:layout_height="match_parent"
         tools:context=".presentation.fragment.home.DetailsFragment">
 
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/nike_text_details"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/goToHomeBackground"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/goToHomeIconFragment"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:elevation="10dp"
+            android:rotation="180"
+            android:src="@drawable/right_arrow_icon"
+            app:layout_constraintBottom_toBottomOf="@id/goToHomeBackground"
+            app:layout_constraintEnd_toEndOf="@id/goToHomeBackground"
+            app:layout_constraintStart_toStartOf="@id/goToHomeBackground"
+            app:layout_constraintTop_toTopOf="@id/goToHomeBackground" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/saveSneakerBackground"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/saveSneakerIconFragment"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:elevation="10dp"
+            android:rotation="180"
+            android:src="@drawable/saved_nav"
+            app:layout_constraintBottom_toBottomOf="@id/saveSneakerBackground"
+            app:layout_constraintEnd_toEndOf="@id/saveSneakerBackground"
+            app:layout_constraintStart_toStartOf="@id/saveSneakerBackground"
+            app:layout_constraintTop_toTopOf="@id/saveSneakerBackground"
+            app:tint="@color/black" />
+
+
+        <TextView
+            android:id="@+id/postNameDetails"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="Kyrie Irving 5 (Infinity)"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/saveSneakerBackground"
+            app:layout_constraintStart_toEndOf="@id/goToHomeBackground"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/postImageDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:rotation="-45"
+            android:scaleType="fitStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postNameDetails"
+            app:layout_constraintVertical_bias="0.3"
+            app:srcCompat="@drawable/nike_kyrie_infinity_2" />
+
+        <TextView
+            android:id="@+id/sneakerSizeTextView"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="28dp"
+            android:gravity="center"
+            android:text="Size"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.20" />
+
+        <LinearLayout
+            android:id="@+id/sizeLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/sneakerSizeTextView"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="@id/sneakerSizeTextView"
+            app:layout_constraintTop_toBottomOf="@id/sneakerSizeTextView">
+
+            <TextView
+                android:id="@+id/sizeUK6"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/custom_input_background"
+                android:elevation="6dp"
+                android:gravity="center"
+                android:text="UK 6"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/sizeUK7"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/custom_input_background"
+                android:elevation="6dp"
+                android:gravity="center"
+                android:text="UK 7"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/sizeUK8"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/custom_input_background"
+                android:elevation="6dp"
+                android:gravity="center"
+                android:text="UK 8"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/sizeUK9"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/custom_input_background"
+                android:elevation="6dp"
+                android:gravity="center"
+                android:text="UK 9"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/sneakerColorTextView"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:text="Color"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
+
+        <LinearLayout
+            android:id="@+id/colorLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/sneakerColorTextView"
+            app:layout_constraintEnd_toEndOf="@id/sneakerColorTextView"
+            app:layout_constraintTop_toBottomOf="@id/sneakerColorTextView">
+
+            <TextView
+                android:id="@+id/color1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/blue"
+                android:background="@drawable/custom_input_background"
+                android:elevation="6dp"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/color2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:backgroundTint="@color/orange"
+                android:background="@drawable/custom_input_background"
+                android:elevation="6dp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/postPriceDetails"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="$ 87.00"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintVertical_bias="0.55"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sizeLinearLayout" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addToCartButton"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:text=">>   Add to cart"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:paddingStart="20dp"
+            android:drawableTint="@color/white"
+            android:background="@drawable/custom_register_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postPriceDetails"
+            app:layout_constraintVertical_bias="0.558" />
+
+        <ImageView
+            android:id="@+id/cartIconDetails"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:elevation="10dp"
+            android:layout_marginStart="35dp"
+            android:src="@drawable/cart_nav"
+            app:layout_constraintStart_toStartOf="@+id/addToCartButton"
+            app:layout_constraintTop_toTopOf="@+id/addToCartButton"
+            app:layout_constraintBottom_toBottomOf="@+id/addToCartButton"
+            app:tint="@color/white" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
