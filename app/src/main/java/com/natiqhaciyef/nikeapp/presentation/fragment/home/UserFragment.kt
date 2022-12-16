@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.natiqhaciyef.nikeapp.R
 import com.natiqhaciyef.nikeapp.databinding.FragmentUserBinding
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class UserFragment : Fragment() {
@@ -22,6 +23,6 @@ class UserFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        requireActivity().bottomNavBar.visibility = View.GONE
     }
 }
