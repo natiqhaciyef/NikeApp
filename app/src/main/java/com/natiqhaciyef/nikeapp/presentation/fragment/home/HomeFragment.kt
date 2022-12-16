@@ -53,6 +53,11 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.homeFragment = this
         handler = Handler(Looper.myLooper()!!)
+        binding.advertiseViewPager.offscreenPageLimit = 3
+        binding.advertiseViewPager.clipToPadding = false
+        binding.advertiseViewPager.clipChildren = false
+        binding.advertiseViewPager.getChildAt(0).overScrollMode =
+            RecyclerView.OVER_SCROLL_NEVER
         screenTransformer()
 
         postAdapter = PostAdapter(requireContext(), PostsList.postList)
@@ -81,7 +86,7 @@ class HomeFragment : Fragment() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 val bottomNavBar = requireActivity().bottomNavBar
                 val t = Fade()
-                t.duration = 350
+                t.duration = 170
                 t.addTarget(bottomNavBar)
                 TransitionManager.beginDelayedTransition(recyclerView, t as Transition)
                 bottomNavBar.visibility =

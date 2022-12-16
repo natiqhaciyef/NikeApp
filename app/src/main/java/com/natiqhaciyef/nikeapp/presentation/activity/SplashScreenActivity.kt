@@ -18,7 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         CoroutineScope(Dispatchers.Main).launch {
-            delay(3000)
+            delay(1500)
             navigateToRegisterActivity()
         }
 

@@ -36,6 +36,7 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/nav_background"
             android:elevation="10dp"
+            android:visibility="visible"
             app:itemIconTint="@drawable/nav_item_selected"
             app:itemTextColor="@color/black"
             app:labelVisibilityMode="unlabeled"
