@@ -36,6 +36,7 @@ class PostAdapter(var mContext: Context, var list: MutableList<PostModel>) :
 
         itemView.sneakerToDetailsSwitch.setOnClickListener { navigateToDetails(it, post) }
         itemView.sneakerSwitchArrow.setOnClickListener { navigateToDetails(it, post) }
+        holder.itemView.setOnClickListener { navigateToDetails(it, post) }
     }
 
     override fun getItemCount(): Int = list.size
