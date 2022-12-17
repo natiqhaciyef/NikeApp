@@ -6,7 +6,7 @@
     <data>
         <variable
             name="homeFragment"
-            type="com.natiqhaciyef.nikeapp.presentation.fragment.home.HomeFragment" />
+            type="com.natiqhaciyef.nikeapp.presentation.view.fragment.home.HomeFragment" />
         <variable
             name="postAdapter"
             type="com.natiqhaciyef.nikeapp.presentation.adapter.PostAdapter" />
@@ -22,7 +22,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".presentation.fragment.home.HomeFragment">
+            tools:context=".presentation.view.fragment.home.HomeFragment">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/goToCartBackground"

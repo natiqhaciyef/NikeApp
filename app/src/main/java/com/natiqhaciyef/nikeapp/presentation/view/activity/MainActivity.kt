@@ -1,4 +1,4 @@
-package com.natiqhaciyef.nikeapp.presentation.activity
+package com.natiqhaciyef.nikeapp.presentation.view.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.natiqhaciyef.nikeapp.R
 import com.natiqhaciyef.nikeapp.databinding.ActivityMainBinding
 import com.natiqhaciyef.nikeapp.presentation.behavior.BottomNavigationBehavior
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {

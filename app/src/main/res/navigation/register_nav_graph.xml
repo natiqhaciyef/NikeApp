@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.natiqhaciyef.nikeapp.presentation.fragment.register.RegisterFragment"
+        android:name="com.natiqhaciyef.nikeapp.presentation.view.fragment.register.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.natiqhaciyef.nikeapp.presentation.fragment.register.LoginFragment"
+        android:name="com.natiqhaciyef.nikeapp.presentation.view.fragment.register.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"
-        android:name="com.natiqhaciyef.nikeapp.presentation.fragment.register.ResetPasswordFragment"
+        android:name="com.natiqhaciyef.nikeapp.presentation.view.fragment.register.ResetPasswordFragment"
         android:label="fragment_reset_password"
         tools:layout="@layout/fragment_reset_password" />
 </navigation>

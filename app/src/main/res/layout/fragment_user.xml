@@ -6,13 +6,13 @@
     <data>
         <variable
             name="userFragment"
-            type="com.natiqhaciyef.nikeapp.presentation.fragment.home.UserFragment" />
+            type="com.natiqhaciyef.nikeapp.presentation.view.fragment.home.UserFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.fragment.home.UserFragment">
+        tools:context=".presentation.view.fragment.home.UserFragment">
 
         <ImageView
             android:id="@+id/nikeLogoUserFragment"
