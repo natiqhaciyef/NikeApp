@@ -1,5 +1,7 @@
 package com.natiqhaciyef.nikeapp.presentation.view.fragment.home
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -33,7 +35,30 @@ class DetailsFragment : Fragment() {
         val navArgs: DetailsFragmentArgs by navArgs()
         val data = navArgs.post
         binding.post = data
-        Log.e("MyTag","${data.colors}")
         Glide.with(requireContext()).load(data.imagePng).into(binding.postImageDetails)
+        setColors(data.colors)
     }
+
+    private fun setColors(colors: List<String>){
+        if(colors.isNotEmpty()) {
+            when(colors.size){
+                1 -> {
+                    binding.color1.backgroundTintList = ColorStateList.valueOf(Color.parseColor(colors[0]))
+                    binding.color2.visibility = View.GONE
+                    binding.color3.visibility = View.GONE
+                }
+                2 -> {
+                    binding.color1.backgroundTintList = ColorStateList.valueOf(Color.parseColor(colors[0]))
+                    binding.color2.backgroundTintList = ColorStateList.valueOf(Color.parseColor(colors[1]))
+                    binding.color3.visibility = View.GONE
+                }
+                else -> {
+                    binding.color1.backgroundTintList = ColorStateList.valueOf(Color.parseColor(colors[0]))
+                    binding.color2.backgroundTintList = ColorStateList.valueOf(Color.parseColor(colors[1]))
+                    binding.color3.backgroundTintList = ColorStateList.valueOf(Color.parseColor(colors[2]))
+                }
+            }
+        }
+    }
+
 }

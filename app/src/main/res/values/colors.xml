@@ -5,9 +5,6 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="gray">#707070</color>
 
     <!-- Application own colors -->
     <color name="top_title_background">#000000</color>
@@ -50,4 +47,9 @@
     <color name="green">#429145</color>
     <color name="dark_green">#286A2B</color>
 
+    <color name="mix">#2E0255</color>
+    <color name="brown">#804000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#707070</color>
 </resources>
