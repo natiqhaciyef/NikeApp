@@ -16,4 +16,5 @@
     <string name="do_you_have_an_account_text">Do you have an account ?</string>
     <string name="forgot_password_text">Forgot Password ?</string>
     <string name="send_text">Send</string>
+    <string name="add_to_cart_text"><![CDATA[>> Add to cart]]></string>
 </resources>

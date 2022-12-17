@@ -1,4 +1,4 @@
-package com.natiqhaciyef.nikeapp.presentation.fragment.home
+package com.natiqhaciyef.nikeapp.presentation.view.fragment.home
 
 import android.os.Bundle
 import android.os.Handler
@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -18,23 +19,28 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.natiqhaciyef.nikeapp.R
+import com.natiqhaciyef.nikeapp.data.model.PostModel
+import com.natiqhaciyef.nikeapp.data.model.ResponseResult
 import com.natiqhaciyef.nikeapp.data.objects.AdsList
 import com.natiqhaciyef.nikeapp.data.objects.CategoryList
-import com.natiqhaciyef.nikeapp.data.objects.PostsList
 import com.natiqhaciyef.nikeapp.databinding.FragmentHomeBinding
 import com.natiqhaciyef.nikeapp.presentation.adapter.AdvertisementAdapter
 import com.natiqhaciyef.nikeapp.presentation.adapter.CategoryAdapter
 import com.natiqhaciyef.nikeapp.presentation.adapter.PostAdapter
+import com.natiqhaciyef.nikeapp.presentation.viewmodel.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.abs
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var handler: Handler
     private lateinit var postAdapter: PostAdapter
     private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var adAdapter: AdvertisementAdapter
+    private var postList = mutableListOf<PostModel>()
+    private val viewModel: HomeViewModel by viewModels()
     private val runnable = Runnable {
         binding.advertiseViewPager.currentItem =
             binding.advertiseViewPager.currentItem + 1
@@ -59,14 +65,10 @@ class HomeFragment : Fragment() {
         binding.advertiseViewPager.getChildAt(0).overScrollMode =
             RecyclerView.OVER_SCROLL_NEVER
         screenTransformer()
+        observeLiveData()
 
-        postAdapter = PostAdapter(requireContext(), PostsList.postList)
         categoryAdapter = CategoryAdapter(requireContext(), CategoryList.list)
         adAdapter = AdvertisementAdapter(requireContext(), AdsList.adsList)
-
-        binding.postRecyclerView.layoutManager =
-            StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        binding.postAdapter = postAdapter
 
         binding.categoriesRecyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -100,6 +102,18 @@ class HomeFragment : Fragment() {
                 super.onScrollStateChanged(recyclerView, newState)
             }
         })
+    }
+
+    private fun observeLiveData() {
+        viewModel.postLiveData.observe(viewLifecycleOwner) {
+            if (it is ResponseResult.Success<List<PostModel>>) {
+                postList = it.data.toMutableList()
+                postAdapter = PostAdapter(requireContext(), postList)
+                binding.postRecyclerView.layoutManager =
+                    StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+                binding.postAdapter = postAdapter
+            }
+        }
     }
 
     private fun screenTransformer() {

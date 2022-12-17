@@ -1,4 +1,4 @@
-package com.natiqhaciyef.nikeapp.presentation.fragment.home
+package com.natiqhaciyef.nikeapp.presentation.view.fragment.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,22 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.natiqhaciyef.nikeapp.R
-import com.natiqhaciyef.nikeapp.databinding.FragmentSavedBinding
+import com.natiqhaciyef.nikeapp.databinding.FragmentUserBinding
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 
-
-class SavedFragment : Fragment() {
-    private lateinit var binding: FragmentSavedBinding
+@AndroidEntryPoint
+class UserFragment : Fragment() {
+    private lateinit var binding: FragmentUserBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_saved, container, false)
-
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.savedFragment = this
+        requireActivity().bottomNavBar.visibility = View.GONE
     }
 }

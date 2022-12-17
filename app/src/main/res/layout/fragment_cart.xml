@@ -5,13 +5,13 @@
     <data>
         <variable
             name="cartFragment"
-            type="com.natiqhaciyef.nikeapp.presentation.fragment.home.CartFragment" />
+            type="com.natiqhaciyef.nikeapp.presentation.view.fragment.home.CartFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.fragment.home.CartFragment">
+        tools:context=".presentation.view.fragment.home.CartFragment">
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

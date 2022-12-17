@@ -1,4 +1,4 @@
-package com.natiqhaciyef.nikeapp.presentation.fragment.register
+package com.natiqhaciyef.nikeapp.presentation.view.fragment.register
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,8 +12,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.natiqhaciyef.nikeapp.R
 import com.natiqhaciyef.nikeapp.databinding.FragmentResetPasswordBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ResetPasswordFragment : Fragment() {
     private lateinit var binding: FragmentResetPasswordBinding
     private lateinit var auth: FirebaseAuth

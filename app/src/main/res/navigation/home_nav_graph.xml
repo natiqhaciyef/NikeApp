@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.natiqhaciyef.nikeapp.presentation.fragment.home.HomeFragment"
+        android:name="com.natiqhaciyef.nikeapp.presentation.view.fragment.home.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_detailsFragment"
@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.natiqhaciyef.nikeapp.presentation.fragment.home.DetailsFragment"
+        android:name="com.natiqhaciyef.nikeapp.presentation.view.fragment.home.DetailsFragment"
         android:label="DetailsFragment" >
         <argument
             android:name="post"
@@ -22,14 +22,14 @@
     </fragment>
     <fragment
         android:id="@+id/savedFragment"
-        android:name="com.natiqhaciyef.nikeapp.presentation.fragment.home.SavedFragment"
+        android:name="com.natiqhaciyef.nikeapp.presentation.view.fragment.home.SavedFragment"
         android:label="SavedFragment" />
     <fragment
         android:id="@+id/userFragment"
-        android:name="com.natiqhaciyef.nikeapp.presentation.fragment.home.UserFragment"
+        android:name="com.natiqhaciyef.nikeapp.presentation.view.fragment.home.UserFragment"
         android:label="UserFragment" />
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.natiqhaciyef.nikeapp.presentation.fragment.home.CartFragment"
+        android:name="com.natiqhaciyef.nikeapp.presentation.view.fragment.home.CartFragment"
         android:label="CartFragment" />
 </navigation>
