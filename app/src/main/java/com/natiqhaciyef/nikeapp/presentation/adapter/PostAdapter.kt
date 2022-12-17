@@ -32,9 +32,7 @@ class PostAdapter(var mContext: Context, var list: MutableList<PostModel>) :
         val itemView = holder.binding
         itemView.postModel = post
         Glide.with(mContext).load(post.image).into(itemView.sneakerImage)
-//        itemView.sneakerImage.setImageResource(
-//            mContext.resources.getIdentifier(post.image, "drawable", mContext.packageName)
-//        )
+
         itemView.sneakerToDetailsSwitch.setOnClickListener { navigateToDetails(it, post) }
         itemView.sneakerSwitchArrow.setOnClickListener { navigateToDetails(it, post) }
     }

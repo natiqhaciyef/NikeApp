@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="detailsFragment"
             type="com.natiqhaciyef.nikeapp.presentation.view.fragment.home.DetailsFragment" />
+        <variable
+            name="post"
+            type="com.natiqhaciyef.nikeapp.data.model.PostModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,7 +84,7 @@
             android:layout_height="45dp"
             android:layout_marginTop="18dp"
             android:gravity="center"
-            android:text="Kyrie Irving 5 (Infinity)"
+            android:text="@{post.name}"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -92,10 +94,11 @@
 
         <ImageView
             android:id="@+id/postImageDetails"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
             android:layout_marginTop="30dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginStart="-15dp"
             android:rotation="-45"
             android:scaleType="fitStart"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -232,7 +235,7 @@
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:gravity="start"
-            android:text="$ 87.00"
+            android:text='@{"$ " + Double.parseDouble(post.price)}'
             android:textColor="@color/black"
             android:textSize="32sp"
             android:textStyle="bold"
@@ -247,7 +250,7 @@
             android:id="@+id/addToCartButton"
             android:layout_width="250dp"
             android:layout_height="60dp"
-            android:text=">>   Add to cart"
+            android:text="@string/add_to_cart_text"
             android:textColor="@color/white"
             android:textAllCaps="false"
             android:textSize="18sp"
@@ -266,7 +269,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:elevation="10dp"
-            android:layout_marginStart="35dp"
+            android:layout_marginStart="43dp"
             android:src="@drawable/cart_nav"
             app:layout_constraintStart_toStartOf="@+id/addToCartButton"
             app:layout_constraintTop_toTopOf="@+id/addToCartButton"
