@@ -6,8 +6,8 @@ object CategoryList {
     val list = mutableListOf(
         CategoryModel(1,"All"),
         CategoryModel(2,"Running"),
-        CategoryModel(3,"Sneakers"),
-        CategoryModel(4,"Formal"),
+        CategoryModel(3,"Sneaker"),
+        CategoryModel(4,"Basketball"),
         CategoryModel(5,"Casual")
     )
 }

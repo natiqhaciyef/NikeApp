@@ -35,12 +35,13 @@ class HomeViewModel @Inject constructor(): BaseViewModel() {
                         val image = doc.get("image") as String
                         val imagePng = doc.get("imagePng") as String
                         val price = doc.get("price") as String
+                        val category = doc.get("category") as String
                         val colors = doc.get("colors") as ArrayList<String>
-                        val post = PostModel(name, image, imagePng, price, colors)
+                        val post = PostModel(name, image, imagePng, price, category, colors)
                         postList.add(post)
                     }
-                    isLoading.value = false
                     postLiveData.value = ResponseResult.Success(postList)
+                    isLoading.value = false
                 }
             }
         }
