@@ -13,7 +13,7 @@ import com.google.android.material.navigation.NavigationView
 import com.natiqhaciyef.nikeapp.R
 import com.natiqhaciyef.nikeapp.data.model.PostModel
 import com.natiqhaciyef.nikeapp.databinding.RecyclerPostsViewBinding
-import com.natiqhaciyef.nikeapp.presentation.fragment.home.HomeFragmentDirections
+import com.natiqhaciyef.nikeapp.presentation.view.fragment.home.HomeFragmentDirections
 
 class PostAdapter(var mContext: Context, var list: MutableList<PostModel>) :
     RecyclerView.Adapter<PostAdapter.PostHolder>() {
@@ -31,10 +31,10 @@ class PostAdapter(var mContext: Context, var list: MutableList<PostModel>) :
         val post = list[position]
         val itemView = holder.binding
         itemView.postModel = post
-//        Glide.with(mContext).load(post.image).into(itemView.sneakerImage)
-        itemView.sneakerImage.setImageResource(
-            mContext.resources.getIdentifier(post.image, "drawable", mContext.packageName)
-        )
+        Glide.with(mContext).load(post.image).into(itemView.sneakerImage)
+//        itemView.sneakerImage.setImageResource(
+//            mContext.resources.getIdentifier(post.image, "drawable", mContext.packageName)
+//        )
         itemView.sneakerToDetailsSwitch.setOnClickListener { navigateToDetails(it, post) }
         itemView.sneakerSwitchArrow.setOnClickListener { navigateToDetails(it, post) }
     }

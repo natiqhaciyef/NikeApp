@@ -1,4 +1,4 @@
-package com.natiqhaciyef.nikeapp.presentation.fragment.register
+package com.natiqhaciyef.nikeapp.presentation.view.fragment.register
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,16 +10,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.ktx.app
 import com.natiqhaciyef.nikeapp.R
 import com.natiqhaciyef.nikeapp.databinding.FragmentLoginBinding
-import com.natiqhaciyef.nikeapp.presentation.activity.MainActivity
+import com.natiqhaciyef.nikeapp.presentation.view.activity.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var auth: FirebaseAuth

@@ -1,15 +1,16 @@
-package com.natiqhaciyef.nikeapp.presentation.activity
+package com.natiqhaciyef.nikeapp.presentation.view.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.natiqhaciyef.nikeapp.databinding.ActivityMainBinding
 import com.natiqhaciyef.nikeapp.databinding.ActivitySplashScreenBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class SplashScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {

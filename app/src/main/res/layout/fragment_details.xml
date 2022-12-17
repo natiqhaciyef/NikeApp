@@ -7,13 +7,13 @@
 
         <variable
             name="detailsFragment"
-            type="com.natiqhaciyef.nikeapp.presentation.fragment.home.DetailsFragment" />
+            type="com.natiqhaciyef.nikeapp.presentation.view.fragment.home.DetailsFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.fragment.home.DetailsFragment">
+        tools:context=".presentation.view.fragment.home.DetailsFragment">
 
         <ImageView
             android:layout_width="130dp"
@@ -132,47 +132,47 @@
             app:layout_constraintTop_toBottomOf="@id/sneakerSizeTextView">
 
             <TextView
-                android:id="@+id/sizeUK6"
+                android:id="@+id/sizeUS6"
                 android:layout_width="70dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/custom_input_background"
                 android:elevation="6dp"
                 android:gravity="center"
-                android:text="UK 6"
+                android:text="US 6"
                 android:textColor="@color/black" />
 
             <TextView
-                android:id="@+id/sizeUK7"
+                android:id="@+id/sizeUS7"
                 android:layout_width="70dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/custom_input_background"
                 android:elevation="6dp"
                 android:gravity="center"
-                android:text="UK 7"
+                android:text="US 7"
                 android:textColor="@color/black" />
 
             <TextView
-                android:id="@+id/sizeUK8"
+                android:id="@+id/sizeUS8"
                 android:layout_width="70dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/custom_input_background"
                 android:elevation="6dp"
                 android:gravity="center"
-                android:text="UK 8"
+                android:text="US 8"
                 android:textColor="@color/black" />
 
             <TextView
-                android:id="@+id/sizeUK9"
+                android:id="@+id/sizeUS9"
                 android:layout_width="70dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/custom_input_background"
                 android:elevation="6dp"
                 android:gravity="center"
-                android:text="UK 9"
+                android:text="US 9"
                 android:textColor="@color/black" />
 
         </LinearLayout>
