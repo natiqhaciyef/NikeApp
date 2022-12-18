@@ -228,6 +228,17 @@
                 android:background="@drawable/custom_input_background"
                 android:elevation="6dp"
                 android:gravity="center" />
+
+            <TextView
+                android:id="@+id/color3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:backgroundTint="@color/red"
+                android:background="@drawable/custom_input_background"
+                android:elevation="6dp"
+                android:gravity="center" />
         </LinearLayout>
 
         <TextView

@@ -88,7 +88,7 @@ class HomeFragment : Fragment() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 val bottomNavBar = requireActivity().bottomNavBar
                 val t = Fade()
-                t.duration = 170
+                t.duration = 120
                 t.addTarget(bottomNavBar)
                 TransitionManager.beginDelayedTransition(recyclerView, t as Transition)
                 bottomNavBar.visibility =
@@ -113,6 +113,10 @@ class HomeFragment : Fragment() {
                     StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
                 binding.postAdapter = postAdapter
             }
+        }
+
+        viewModel.isLoading.observe(viewLifecycleOwner){
+            binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
         }
     }
 

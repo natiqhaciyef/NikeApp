@@ -2,6 +2,7 @@ package com.natiqhaciyef.nikeapp.presentation.adapter
 
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,6 +36,7 @@ class PostAdapter(var mContext: Context, var list: MutableList<PostModel>) :
 
         itemView.sneakerToDetailsSwitch.setOnClickListener { navigateToDetails(it, post) }
         itemView.sneakerSwitchArrow.setOnClickListener { navigateToDetails(it, post) }
+        holder.itemView.setOnClickListener { navigateToDetails(it, post) }
     }
 
     override fun getItemCount(): Int = list.size

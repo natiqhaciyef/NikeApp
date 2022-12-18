@@ -7,5 +7,6 @@ data class PostModel(
     var image: String,
     var imagePng: String,
     var price: String,
+    var category: String,
     var colors: List<String>
 ): Serializable
