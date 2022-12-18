@@ -45,4 +45,9 @@ class PostAdapter(var mContext: Context, var list: MutableList<PostModel>) :
         val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(post)
         Navigation.findNavController(view).navigate(action)
     }
+
+    fun filter(list: MutableList<PostModel>){
+        this.list = list
+        notifyDataSetChanged()
+    }
 }

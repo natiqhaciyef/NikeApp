@@ -8,9 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.natiqhaciyef.nikeapp.R
 import com.natiqhaciyef.nikeapp.data.model.CategoryModel
 import com.natiqhaciyef.nikeapp.databinding.RecyclerCategoryViewBinding
+import com.natiqhaciyef.nikeapp.presentation.behavior.CategorySelectedListener
 
 class CategoryAdapter(val mContext: Context, var list: MutableList<CategoryModel>) :
     RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
+
+    private var listener: CategorySelectedListener? = null
 
     inner class CategoryHolder(var binding: RecyclerCategoryViewBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -26,8 +29,12 @@ class CategoryAdapter(val mContext: Context, var list: MutableList<CategoryModel
         val category = list[position]
 
         itemView.categoryModel = category
+        holder.itemView.setOnClickListener { listener?.setOnClickListener(category = category.name) }
     }
 
     override fun getItemCount(): Int = list.size
 
+    fun onClick(listener: CategorySelectedListener){
+        this.listener = listener
+    }
 }
