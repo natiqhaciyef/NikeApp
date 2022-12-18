@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(): BaseViewModel() {
+class HomeViewModel @Inject constructor() : BaseViewModel() {
     val postLiveData = MutableLiveData<ResponseResult.Success<List<PostModel>>>()
     val isLoading = MutableLiveData(false)
 
@@ -21,16 +21,16 @@ class HomeViewModel @Inject constructor(): BaseViewModel() {
         loadFromFirestore()
     }
 
-    private fun loadFromFirestore(){
+    private fun loadFromFirestore() {
         val db = Firebase.firestore
         val postList = ArrayList<PostModel>()
         isLoading.value = true
         viewModelScope.launch(Dispatchers.Main) {
-            db.collection("Post").addSnapshotListener{value, error ->
-                if (value != null && !value.isEmpty){
+            db.collection("Post").addSnapshotListener { value, error ->
+                if (value != null && !value.isEmpty) {
                     val docs = value.documents
                     postList.clear()
-                    for (doc in docs){
+                    for (doc in docs) {
                         val name = doc.get("name") as String
                         val image = doc.get("image") as String
                         val imagePng = doc.get("imagePng") as String
@@ -45,5 +45,36 @@ class HomeViewModel @Inject constructor(): BaseViewModel() {
                 }
             }
         }
+    }
+
+    fun categoryFilter(category: String, list: MutableList<PostModel>): MutableList<PostModel> {
+        var customList = mutableListOf<PostModel>()
+        if (category.lowercase() != "all" && category.isNotEmpty() && category.lowercase() != "" && category.lowercase() != "bütün") {
+            if (category.lowercase() == "running" || category.lowercase() == "qaçış") {
+                for (element in list) {
+                    if (element.category.lowercase() == "running")
+                        customList.add(element)
+                }
+            } else if (category.lowercase() == "sneaker" || category.lowercase() == "idman") {
+                for (element in list) {
+                    if (element.category.lowercase() == "sneaker")
+                        customList.add(element)
+                }
+            } else if (category.lowercase() == "basketball" || category.lowercase() == "basketbol") {
+                for (element in list) {
+                    if (element.category.lowercase() == "basketball")
+                        customList.add(element)
+                }
+            } else if (category.lowercase() == "casual" || category.lowercase() == "gündəlik") {
+                for (element in list) {
+                    if (element.category.lowercase() == "casual")
+                        customList.add(element)
+                }
+            }
+        } else {
+            customList = list
+        }
+
+        return customList
     }
 }

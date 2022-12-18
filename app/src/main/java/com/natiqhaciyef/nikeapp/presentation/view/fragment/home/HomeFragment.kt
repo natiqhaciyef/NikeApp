@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.snackbar.Snackbar
 import com.natiqhaciyef.nikeapp.R
 import com.natiqhaciyef.nikeapp.data.model.PostModel
 import com.natiqhaciyef.nikeapp.data.model.ResponseResult
@@ -27,6 +28,7 @@ import com.natiqhaciyef.nikeapp.databinding.FragmentHomeBinding
 import com.natiqhaciyef.nikeapp.presentation.adapter.AdvertisementAdapter
 import com.natiqhaciyef.nikeapp.presentation.adapter.CategoryAdapter
 import com.natiqhaciyef.nikeapp.presentation.adapter.PostAdapter
+import com.natiqhaciyef.nikeapp.presentation.behavior.CategorySelectedListener
 import com.natiqhaciyef.nikeapp.presentation.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
@@ -102,6 +104,12 @@ class HomeFragment : Fragment() {
                 super.onScrollStateChanged(recyclerView, newState)
             }
         })
+
+        categoryAdapter.onClick(object : CategorySelectedListener {
+            override fun setOnClickListener(category: String) {
+                filterByCategory(category)
+            }
+        })
     }
 
     private fun observeLiveData() {
@@ -128,5 +136,11 @@ class HomeFragment : Fragment() {
             page.scaleY = 0.85f + r * 0.14f
         }
         binding.advertiseViewPager.setPageTransformer(transformer)
+    }
+
+    fun filterByCategory(category: String){
+        val list = viewModel.categoryFilter(category, postList)
+        if (list.isNotEmpty())
+            postAdapter.filter(list)
     }
 }
