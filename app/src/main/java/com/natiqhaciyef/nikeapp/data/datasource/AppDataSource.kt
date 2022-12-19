@@ -1,4 +1,6 @@
 package com.natiqhaciyef.nikeapp.data.datasource
 
-class AppDataSource() {
+import com.natiqhaciyef.nikeapp.data.room.NikeDao
+
+class AppDataSource(val dao: NikeDao) {
 }
