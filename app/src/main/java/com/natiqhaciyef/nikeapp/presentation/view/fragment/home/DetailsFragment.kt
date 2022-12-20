@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide
 import com.natiqhaciyef.nikeapp.R
 import com.natiqhaciyef.nikeapp.data.model.CartPost
 import com.natiqhaciyef.nikeapp.databinding.FragmentDetailsBinding
+import com.natiqhaciyef.nikeapp.presentation.viewmodel.CartViewModel
 import com.natiqhaciyef.nikeapp.presentation.viewmodel.DetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
@@ -22,7 +23,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 @AndroidEntryPoint
 class DetailsFragment : Fragment() {
     private lateinit var binding: FragmentDetailsBinding
+    private var list = mutableListOf<String>()
     private val viewModel: DetailsViewModel by viewModels()
+    private val cartViewModel: CartViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,6 +38,7 @@ class DetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.detailsFragment = this
+        observer()
         requireActivity().bottomNavBar.visibility = View.GONE
         val navArgs: DetailsFragmentArgs by navArgs()
         val data = navArgs.post
@@ -53,8 +57,19 @@ class DetailsFragment : Fragment() {
                 colors = colorsText,
                 price = data.price
             )
-            viewModel.insertToCart(cartPost)
-            Log.e("Response result", "Sent")
+            if (list.contains(cartPost.name)){
+
+            }else
+                viewModel.insertToCart(cartPost)
+        }
+    }
+
+    private fun observer() {
+        cartViewModel.getAllCart()
+        cartViewModel.cartLiveData.observe(viewLifecycleOwner) {
+            for (i in it){
+                list.add(i.name)
+            }
         }
     }
 

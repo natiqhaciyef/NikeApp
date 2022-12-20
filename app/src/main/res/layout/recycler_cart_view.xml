@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="cartPost"
+            type="com.natiqhaciyef.nikeapp.data.model.CartPost" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="7dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp">
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/recycler_post_background">
+            
+            <ImageView
+                android:id="@+id/cartPostImage"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:padding="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/cartPostName"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="@{cartPost.name}"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/cartPostPrice"
+                app:layout_constraintStart_toEndOf="@id/cartPostImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/cartPostDescription"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:text='@{"Category : " + cartPost.category}'
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cartPostPrice"
+                app:layout_constraintStart_toEndOf="@id/cartPostImage"
+                app:layout_constraintTop_toBottomOf="@id/cartPostName" />
+
+            <TextView
+                android:id="@+id/cartPostPrice"
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:text='@{cartPost.price + " $"}'
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
