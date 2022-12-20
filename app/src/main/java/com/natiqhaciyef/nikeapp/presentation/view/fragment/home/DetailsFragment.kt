@@ -56,14 +56,6 @@ class DetailsFragment : Fragment() {
             viewModel.insertToCart(cartPost)
             Log.e("Response result", "Sent")
         }
-
-        observeLiveData()
-    }
-
-    private fun observeLiveData() {
-        viewModel.cartLiveData.observe(viewLifecycleOwner) {
-            Log.e("Response result", "$it")
-        }
     }
 
     private fun setColors(colors: List<String>) {
