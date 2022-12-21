@@ -10,7 +10,7 @@ interface NikeDao {
     @Query("SELECT * FROM cart_model")
     suspend fun getAllCart(): List<CartPost>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertToCart(cartPost: CartPost)
 
     @Update
