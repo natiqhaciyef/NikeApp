@@ -66,7 +66,7 @@
                 android:id="@+id/joinDataText"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:text="Join data: 14.12.2022"
+                android:text="Join data: "
                 android:textStyle="bold"
                 android:textSize="19sp"
                 android:textColor="@color/black"
