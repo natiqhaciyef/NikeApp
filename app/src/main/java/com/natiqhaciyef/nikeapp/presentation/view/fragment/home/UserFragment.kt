@@ -34,15 +34,20 @@ class UserFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         requireActivity().bottomNavBar.visibility = View.GONE
         auth = Firebase.auth
-        auth.currentUser?.let{
+        auth.currentUser?.let {
             binding.userEmailText.text = "Email: ${it.email}"
             val date = Date(it.metadata!!.creationTimestamp)
 
-            binding.joinDataText.text = "Join date: ${date.date} ${monthFinder(date.month)} ${yearFinder(date.year)}"
+            binding.joinDataText.text =
+                "Join date: ${date.date} ${monthFinder(date.month)} ${yearFinder(date.year)}"
         }
 
         binding.signOutButton.setOnClickListener {
-//            auth.signOut()
         }
+    }
+
+    private fun userSignOut() {
+        auth.signOut()
+
     }
 }

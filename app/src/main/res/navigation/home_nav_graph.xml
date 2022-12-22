@@ -19,6 +19,9 @@
         <argument
             android:name="post"
             app:argType="com.natiqhaciyef.nikeapp.data.model.PostModel" />
+        <action
+            android:id="@+id/action_detailsFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
     </fragment>
     <fragment
         android:id="@+id/savedFragment"
