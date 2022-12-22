@@ -1,18 +1,23 @@
 package com.natiqhaciyef.nikeapp.presentation.view.fragment.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.natiqhaciyef.nikeapp.R
 import com.natiqhaciyef.nikeapp.data.util.monthFinder
 import com.natiqhaciyef.nikeapp.data.util.yearFinder
+import com.natiqhaciyef.nikeapp.databinding.AlertDialogSignOutBinding
 import com.natiqhaciyef.nikeapp.databinding.FragmentUserBinding
+import com.natiqhaciyef.nikeapp.presentation.view.activity.RegisterActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.Date
@@ -43,11 +48,32 @@ class UserFragment : Fragment() {
         }
 
         binding.signOutButton.setOnClickListener {
+            userSignOut()
         }
     }
 
     private fun userSignOut() {
-        auth.signOut()
+        val view = AlertDialogSignOutBinding.inflate(layoutInflater)
+        val yes = view.positiveButton
+        val no = view.negativeButton
 
+        val customAlert = AlertDialog.Builder(requireContext())
+            .setView(view.root)
+            .create()
+
+        yes.setOnClickListener {
+            auth.signOut()
+            customAlert.cancel()
+            val intent = Intent(requireActivity(), RegisterActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+
+        no.setOnClickListener {
+            findNavController().navigate(R.id.userFragment)
+            customAlert.cancel()
+        }
+
+        customAlert.show()
     }
 }
