@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.natiqhaciyef.nikeapp.R
@@ -61,6 +62,7 @@ class DetailsFragment : Fragment() {
 
             }else
                 viewModel.insertToCart(cartPost)
+            Navigation.findNavController(it).navigate(R.id.cartFragment)
         }
     }
 

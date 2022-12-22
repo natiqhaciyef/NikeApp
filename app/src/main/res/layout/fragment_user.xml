@@ -51,9 +51,10 @@
             >
 
             <TextView
+                android:id="@+id/userEmailText"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:text="Username: Natiq Haciyev"
+                android:text="Email: "
                 android:textStyle="bold"
                 android:textSize="19sp"
                 android:textColor="@color/black"
@@ -62,9 +63,10 @@
                 />
 
             <TextView
+                android:id="@+id/joinDataText"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:text="Join data: 14.12.2022"
+                android:text="Join data: "
                 android:textStyle="bold"
                 android:textSize="19sp"
                 android:textColor="@color/black"
@@ -74,6 +76,7 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signOutButton"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:background="@drawable/custom_register_button"
