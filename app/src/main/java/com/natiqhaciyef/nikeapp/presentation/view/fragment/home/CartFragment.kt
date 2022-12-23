@@ -16,6 +16,7 @@ import com.natiqhaciyef.nikeapp.databinding.FragmentCartBinding
 import com.natiqhaciyef.nikeapp.presentation.adapter.CartAdapter
 import com.natiqhaciyef.nikeapp.presentation.viewmodel.CartViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class CartFragment : Fragment() {
@@ -36,6 +37,7 @@ class CartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         observeLiveData()
         ItemTouchHelper(swipeCallBack).attachToRecyclerView(binding.recyclerCart)
+        requireActivity().bottomNavBar.visibility = View.GONE
     }
 
     private fun observeLiveData() {
