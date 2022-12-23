@@ -2,11 +2,9 @@ package com.natiqhaciyef.nikeapp.data.room
 
 import androidx.room.*
 import com.natiqhaciyef.nikeapp.data.model.CartPost
-import retrofit2.http.GET
 
 @Dao
-interface NikeDao {
-
+interface CartDao {
     @Query("SELECT * FROM cart_model")
     suspend fun getAllCart(): List<CartPost>
 
