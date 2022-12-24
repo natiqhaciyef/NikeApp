@@ -2,8 +2,9 @@ package com.natiqhaciyef.nikeapp.data.repository
 
 import com.natiqhaciyef.nikeapp.data.datasource.AppDataSource
 import com.natiqhaciyef.nikeapp.data.model.CartPost
+import com.natiqhaciyef.nikeapp.data.model.SavedModel
 
-class AppRepository(var dataSource: AppDataSource) {
+class CartRepository (var dataSource: AppDataSource) {
 
     suspend fun getAllCart(): List<CartPost> = dataSource.getAllCart()
 
@@ -12,4 +13,5 @@ class AppRepository(var dataSource: AppDataSource) {
     suspend fun updateCart(cartPost: CartPost) = dataSource.updateCart(cartPost)
 
     suspend fun deleteFromCart(cartPost: CartPost) = dataSource.deleteFromCart(cartPost)
+
 }

@@ -1,7 +1,6 @@
 package com.natiqhaciyef.nikeapp.data.room
 
 import androidx.room.*
-import com.natiqhaciyef.nikeapp.data.model.CartPost
 import com.natiqhaciyef.nikeapp.data.model.SavedModel
 
 @Dao
@@ -10,11 +9,11 @@ interface SavedDao {
     suspend fun getAllSaved(): List<SavedModel>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertToCart(savedModel: SavedModel)
+    suspend fun insertToSaved(savedModel: SavedModel)
 
     @Update
-    suspend fun updateCart(savedModel: SavedModel)
+    suspend fun updateSaved(savedModel: SavedModel)
 
     @Delete
-    suspend fun deleteFromCart(savedModel: SavedModel)
+    suspend fun deleteFromSaved(savedModel: SavedModel)
 }

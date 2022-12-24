@@ -4,7 +4,8 @@ import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.natiqhaciyef.nikeapp.data.datasource.AppDataSource
-import com.natiqhaciyef.nikeapp.data.repository.AppRepository
+import com.natiqhaciyef.nikeapp.data.repository.CartRepository
+import com.natiqhaciyef.nikeapp.data.repository.SavedRepository
 import com.natiqhaciyef.nikeapp.data.room.CartDao
 import com.natiqhaciyef.nikeapp.data.room.NikeDatabase
 import com.natiqhaciyef.nikeapp.data.room.SavedDao
@@ -25,7 +26,12 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideRepository(ds: AppDataSource) = AppRepository(ds)
+    fun provideCartRepository(ds: AppDataSource) = CartRepository(ds)
+
+    @Provides
+    @Singleton
+    fun provideSavedRepository(ds: AppDataSource) = SavedRepository(ds)
+
 
     @Provides
     @Singleton
