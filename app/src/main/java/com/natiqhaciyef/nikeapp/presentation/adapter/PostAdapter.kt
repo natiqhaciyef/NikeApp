@@ -34,8 +34,6 @@ class PostAdapter(var mContext: Context, var list: MutableList<PostModel>) :
         itemView.postModel = post
         Glide.with(mContext).load(post.image).into(itemView.sneakerImage)
 
-        itemView.sneakerToDetailsSwitch.setOnClickListener { navigateToDetails(it, post) }
-        itemView.sneakerSwitchArrow.setOnClickListener { navigateToDetails(it, post) }
         holder.itemView.setOnClickListener { navigateToDetails(it, post) }
     }
 
