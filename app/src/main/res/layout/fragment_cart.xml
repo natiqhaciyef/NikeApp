@@ -17,17 +17,32 @@
         android:layout_height="match_parent"
         tools:context=".presentation.view.fragment.home.CartFragment">
 
+        <TextView
+            android:id="@+id/cartTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Cart orders"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:paddingStart="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerCart"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:adapter="@{cartAdapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/cartTitleText"
+             />
 
         <TextView
             android:id="@+id/isEmptyText"

@@ -56,35 +56,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:fontFamily="@font/work_sans_medium"
                 android:text='@{"$ " + postModel.price}'
                 android:textColor="@color/black"
                 android:textSize="17sp"
-                app:layout_constraintEnd_toStartOf="@+id/sneakerToDetailsSwitch"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sneakerName" />
-
-            <TextView
-                android:id="@+id/sneakerToDetailsSwitch"
-                android:layout_width="30dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="13dp"
-                android:background="@drawable/custom_background_recycler_post_switch"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sneakerName"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-            <ImageView
-                android:id="@+id/sneakerSwitchArrow"
-                android:layout_width="30dp"
-                android:layout_height="25dp"
-                android:src="@drawable/right_arrow_icon"
-                app:layout_constraintTop_toTopOf="@id/sneakerToDetailsSwitch"
-                app:layout_constraintBottom_toBottomOf="@id/sneakerToDetailsSwitch"
-                app:layout_constraintStart_toStartOf="@id/sneakerToDetailsSwitch"
-                app:layout_constraintEnd_toEndOf="@id/sneakerToDetailsSwitch"
-                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
