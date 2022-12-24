@@ -65,12 +65,25 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/saveSneakerIconFragment"
+            android:id="@+id/saveSneakerIconEmptyFragment"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:elevation="10dp"
             android:rotation="180"
             android:src="@drawable/saved_nav"
+            app:layout_constraintBottom_toBottomOf="@id/saveSneakerBackground"
+            app:layout_constraintEnd_toEndOf="@id/saveSneakerBackground"
+            app:layout_constraintStart_toStartOf="@id/saveSneakerBackground"
+            app:layout_constraintTop_toTopOf="@id/saveSneakerBackground"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:id="@+id/saveSneakerIconFilledFragment"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:elevation="10dp"
+            android:visibility="gone"
+            android:src="@drawable/nike_logo"
             app:layout_constraintBottom_toBottomOf="@id/saveSneakerBackground"
             app:layout_constraintEnd_toEndOf="@id/saveSneakerBackground"
             app:layout_constraintStart_toStartOf="@id/saveSneakerBackground"
