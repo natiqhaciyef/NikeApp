@@ -40,6 +40,7 @@ class SavedFragment : Fragment() {
         observer()
         ItemTouchHelper(swipeCallBack).attachToRecyclerView(binding.recyclerSavedView)
         requireActivity().bottomNavBar.visibility = View.GONE
+
     }
 
     private fun observer(){
@@ -48,6 +49,8 @@ class SavedFragment : Fragment() {
             adapter = SavedPostAdapter(requireContext(), list)
             binding.recyclerSavedView.adapter = adapter
             binding.recyclerSavedView.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+
+            binding.isEmpty.visibility = if(list.isEmpty()) View.VISIBLE else View.GONE
         }
     }
 
