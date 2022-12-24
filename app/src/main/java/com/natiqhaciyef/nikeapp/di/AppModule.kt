@@ -2,15 +2,12 @@ package com.natiqhaciyef.nikeapp.di
 
 import android.content.Context
 import androidx.room.Room
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.ktx.storage
+import androidx.room.RoomDatabase
 import com.natiqhaciyef.nikeapp.data.datasource.AppDataSource
 import com.natiqhaciyef.nikeapp.data.repository.AppRepository
-import com.natiqhaciyef.nikeapp.data.room.NikeDao
+import com.natiqhaciyef.nikeapp.data.room.CartDao
 import com.natiqhaciyef.nikeapp.data.room.NikeDatabase
+import com.natiqhaciyef.nikeapp.data.room.SavedDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,7 +21,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideDataSource(dao: NikeDao) = AppDataSource(dao)
+    fun provideDataSource(cartDao: CartDao, savedDao: SavedDao) = AppDataSource(cartDao, savedDao)
 
     @Provides
     @Singleton
@@ -32,6 +29,15 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideRoomDatabase(@ApplicationContext context: Context) =
-        Room.databaseBuilder(context, NikeDatabase::class.java, "cart_model").build().getDao()
+    fun provideRoomInstance(@ApplicationContext context: Context) =
+        Room.databaseBuilder(context, NikeDatabase::class.java, "nike_database")
+            .build()
+
+    @Provides
+    @Singleton
+    fun provideSavedDao(db: NikeDatabase) = db.getSavedDao()
+
+    @Provides
+    @Singleton
+    fun provideCartDao(db: NikeDatabase) = db.getCartDao()
 }

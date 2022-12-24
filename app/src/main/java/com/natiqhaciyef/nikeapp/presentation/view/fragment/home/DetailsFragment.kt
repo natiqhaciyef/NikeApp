@@ -64,6 +64,14 @@ class DetailsFragment : Fragment() {
                 viewModel.insertToCart(cartPost)
             Navigation.findNavController(it).navigate(R.id.cartFragment)
         }
+
+        binding.goToHomeBackground.setOnClickListener {
+            backToHome(it)
+        }
+
+        binding.goToHomeIconFragment.setOnClickListener {
+            backToHome(it)
+        }
     }
 
     private fun observer() {
@@ -84,7 +92,7 @@ class DetailsFragment : Fragment() {
                     binding.color2.visibility = View.GONE
                     binding.color3.visibility = View.GONE
                 }
-                2 -> {
+                 2 -> {
                     binding.color1.backgroundTintList =
                         ColorStateList.valueOf(Color.parseColor(colors[0]))
                     binding.color2.backgroundTintList =
@@ -103,4 +111,5 @@ class DetailsFragment : Fragment() {
         }
     }
 
+    private fun backToHome(view: View) = Navigation.findNavController(view).popBackStack()
 }
