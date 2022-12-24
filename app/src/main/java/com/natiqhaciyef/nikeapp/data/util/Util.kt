@@ -10,7 +10,7 @@ fun List<String>.toString(): String {
     return result
 }
 
-fun String.toList(): List<String> {
+fun String.toCustomList(): List<String> {
     val list = mutableListOf<String>()
     val item = this.toMutableList()
     item.add(' ')
