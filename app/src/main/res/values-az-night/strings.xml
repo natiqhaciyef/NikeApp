@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Nike Store</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="slogan1">Enter your email to join us or sign in</string>
+    <string name="slogan2">By continuing, I agree to Nike’s Privacy Policy and Terms of Use.</string>
+    <string name="slogan3">Set new password and come back to store</string>
+    <string name="login_button_text">Continue</string>
+    <string name="register_text">Create Account</string>
+    <string name="username_text">Username</string>
+    <string name="email_text">Email</string>
+    <string name="password_text">Password</string>
+    <string name="sign_in_text">Sign in</string>
+    <string name="you_have_not_an_account_text">You have not an account ?</string>
+    <string name="sign_up_text">Sign up</string>
+    <string name="do_you_have_an_account_text">Do you have an account ?</string>
+    <string name="forgot_password_text">Forgot Password ?</string>
+    <string name="send_text">Send</string>
+    <string name="add_to_cart_text"><![CDATA[>> Add to cart]]></string>
+    <string name="not_favourite_selected_text">Not favourite selected</string>
+    <string name="favourites_text">Favourites</string>
+    <string name="cart_is_empty_text">Cart is empty</string>
+    <string name="cart_orders_text">Cart orders</string>
+</resources>
