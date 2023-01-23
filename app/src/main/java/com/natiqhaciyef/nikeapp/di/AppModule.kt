@@ -4,7 +4,9 @@ import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.natiqhaciyef.nikeapp.data.datasource.AppDataSource
+import com.natiqhaciyef.nikeapp.data.repository.CartInterface
 import com.natiqhaciyef.nikeapp.data.repository.CartRepository
+import com.natiqhaciyef.nikeapp.data.repository.SavedInterface
 import com.natiqhaciyef.nikeapp.data.repository.SavedRepository
 import com.natiqhaciyef.nikeapp.data.room.CartDao
 import com.natiqhaciyef.nikeapp.data.room.NikeDatabase
@@ -18,7 +20,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class AppModule {
+object AppModule {
 
     @Provides
     @Singleton
@@ -26,11 +28,11 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideCartRepository(ds: AppDataSource) = CartRepository(ds)
+    fun provideCartRepository(ds: AppDataSource) = CartRepository(ds) as CartInterface
 
     @Provides
     @Singleton
-    fun provideSavedRepository(ds: AppDataSource) = SavedRepository(ds)
+    fun provideSavedRepository(ds: AppDataSource) = SavedRepository(ds) as SavedInterface
 
 
     @Provides
