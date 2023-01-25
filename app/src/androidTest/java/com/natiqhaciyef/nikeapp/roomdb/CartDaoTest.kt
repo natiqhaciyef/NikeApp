@@ -8,6 +8,8 @@ import com.google.common.truth.Truth.assertThat
 import com.natiqhaciyef.nikeapp.data.model.CartPost
 import com.natiqhaciyef.nikeapp.data.room.CartDao
 import com.natiqhaciyef.nikeapp.data.room.NikeDatabase
+import dagger.hilt.android.testing.HiltAndroidRule
+import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
@@ -16,23 +18,29 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import javax.inject.Inject
+import javax.inject.Named
 
 // During testing you have to comment shirinking and minifying in gradle module
 
 @SmallTest
 @ExperimentalCoroutinesApi
+@HiltAndroidTest
 class CartDaoTest {
     @get: Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
+    @get: Rule
+    var hiltRule = HiltAndroidRule(this)
 
-    private lateinit var database: NikeDatabase
+
+    @Inject
+    @Named("testDatabase")
+    lateinit var database: NikeDatabase
     private lateinit var dao: CartDao
 
     @Before
     fun setup() {
-        database = Room.inMemoryDatabaseBuilder(
-            ApplicationProvider.getApplicationContext(), NikeDatabase::class.java
-        ).allowMainThreadQueries().build()
+        hiltRule.inject()
         dao = database.getCartDao()
     }
 
@@ -53,7 +61,7 @@ class CartDaoTest {
             colors = "black"
         )
         dao.insertToCart(cart)
-        delay(1500)
+//        delay(1500)
         val list = dao.getAllCart()
         assertThat(list).contains(cart)
     }
@@ -70,7 +78,7 @@ class CartDaoTest {
             colors = "black"
         )
         dao.deleteFromCart(cart)
-        delay(1500)
+//        delay(1500)
         val list = dao.getAllCart()
         assertThat(list).doesNotContain(cart)
     }
