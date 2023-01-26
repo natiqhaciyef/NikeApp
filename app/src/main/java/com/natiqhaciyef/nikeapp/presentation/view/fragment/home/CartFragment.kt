@@ -40,6 +40,7 @@ class CartFragment : Fragment() {
         requireActivity().bottomNavBar.visibility = View.GONE
     }
 
+
     private fun observeLiveData() {
         viewModel.cartLiveData.observe(viewLifecycleOwner) {
             list = it.toMutableList()

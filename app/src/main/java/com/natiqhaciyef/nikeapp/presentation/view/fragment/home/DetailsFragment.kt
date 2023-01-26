@@ -15,6 +15,7 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.natiqhaciyef.nikeapp.R
 import com.natiqhaciyef.nikeapp.data.model.CartPost
+import com.natiqhaciyef.nikeapp.data.model.PostModel
 import com.natiqhaciyef.nikeapp.data.model.SavedModel
 import com.natiqhaciyef.nikeapp.databinding.FragmentDetailsBinding
 import com.natiqhaciyef.nikeapp.presentation.viewmodel.CartViewModel
@@ -22,6 +23,7 @@ import com.natiqhaciyef.nikeapp.presentation.viewmodel.DetailsViewModel
 import com.natiqhaciyef.nikeapp.presentation.viewmodel.SavedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_details.*
 
 @AndroidEntryPoint
 class DetailsFragment : Fragment() {
@@ -37,8 +39,8 @@ class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
-
         return binding.root
+//        return inflater.inflate(R.layout.fragment_details, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,7 +54,11 @@ class DetailsFragment : Fragment() {
         Glide.with(requireContext()).load(data.imagePng).into(binding.postImageDetails)
         setColors(data.colors)
 
-        binding.addToCartButton.setOnClickListener {
+        //For testing
+//        val data =
+//            PostModel(name = "AJ", "1234", "1234.png", "76", "basketball", mutableListOf("Red"))
+        binding
+            .addToCartButton.setOnClickListener {
             val colorsText = data.colors.toString()
             val cartPost = CartPost(
                 id = 0,
@@ -70,15 +76,17 @@ class DetailsFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.cartFragment)
         }
 
-        binding.goToHomeBackground.setOnClickListener {
+        binding
+            .goToHomeBackground.setOnClickListener {
             backToHome(it)
         }
 
-        binding.goToHomeIconFragment.setOnClickListener {
+        goToHomeIconFragment.setOnClickListener {
             backToHome(it)
         }
 
-        binding.saveSneakerIconEmptyFragment.setOnClickListener {
+        binding
+            .saveSneakerIconEmptyFragment.setOnClickListener {
             val color = data.colors.toString()
             val savedModel = SavedModel(
                 id = 0,
@@ -89,7 +97,8 @@ class DetailsFragment : Fragment() {
                 category = data.category,
                 colors = color
             )
-            if (savedList.contains(savedModel.name)) {} else
+            if (savedList.contains(savedModel.name)) {
+            } else
                 viewModel.insertToSaved(savedModel)
 
             binding.saveSneakerIconEmptyFragment.visibility = View.GONE
